@@ -128,6 +128,39 @@
 			border-top: 1px solid var(--line);
 		}
 
+		.personal-projects {
+			margin-top: 64px;
+			padding-top: 30px;
+			border-top: 1px solid var(--line);
+		}
+
+		.personal-projects > h2 {
+			margin-bottom: 32px;
+		}
+
+		.project-content {
+			max-width: 680px;
+		}
+
+		.project-content h3 {
+			margin: 0 0 16px;
+			font-size: 2rem;
+			font-weight: 400;
+			line-height: 1.15;
+		}
+
+		.project-content video {
+			max-width: 464px;
+			margin-bottom: 18px;
+		}
+
+		.project-content p {
+			max-width: 620px;
+			margin-bottom: 20px;
+			color: var(--muted);
+			font-size: 1.05rem;
+		}
+
 		h2 {
 			margin-bottom: 12px;
 			font-size: 1.35rem;
@@ -210,6 +243,19 @@
 				<p>In the video, the parachute deploy event happens somewhat early; it should have occurred at apogee. I used the recorded data to investigate the behavior and found that the bug is probably related to the rotation sensor not being normalized correctly.</p>
 				<p>The interesting part was that the code always worked in our simulations. That pointed to a difference between the simulated environment and reality: the real sensor data may not have the same normalization guarantees as the simulated data. The next test is a drone flight this weekend, where I can reproduce the sensor motion and validate the hypothesis.</p>
             </div>
+		</section>
+
+		<section class="personal-projects" aria-labelledby="personal-projects-title">
+			<h2 id="personal-projects-title">Personal projects</h2>
+			<div class="project-content">
+				<h3>Learning the basics</h3>
+				<video controls preload="metadata">
+					<source src="Dmotorpizzapowerv3.1-16s.mp4" type="video/mp4">
+					Your browser does not support the video element.
+				</video>
+				<p>I explored basic aerodynamics, recovery theory and motor design and started building my own full stack hobby rockets.</p>
+				<p>Soon I will attempt my first L1 launch, hopefully by the end of 2026.</p>
+			</div>
 		</section>
 	</main>
 </body>
