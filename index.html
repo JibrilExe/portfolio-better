@@ -54,14 +54,6 @@
 			margin-top: 0;
 		}
 
-		h1 {
-			margin-bottom: 16px;
-			font-size: clamp(2.5rem, 6vw, 4.75rem);
-			font-weight: 400;
-			letter-spacing: -0.03em;
-			line-height: 1.02;
-		}
-
 		.intro {
 			max-width: 620px;
 			margin-bottom: 0;
@@ -89,9 +81,19 @@
 		}
 
 		.parachute {
-			margin: 30px 0 36px;
-			padding-top: 24px;
+			max-width: 360px;
+			margin: 24px 0 30px;
+			padding-top: 20px;
 			border-top: 1px solid var(--line);
+		}
+
+		.parachute img {
+			display: block;
+			width: 100%;
+			max-height: 220px;
+			object-fit: contain;
+			background: var(--panel);
+			border: 1px solid var(--line);
 		}
 
 		.parachute h3 {
@@ -104,13 +106,6 @@
 
 		.parachute figure {
 			max-width: 520px;
-		}
-
-		.parachute img {
-			display: block;
-			width: 100%;
-			height: auto;
-			border: 1px solid var(--line);
 		}
 
 		figcaption {
@@ -178,6 +173,54 @@
 			font-weight: 400;
 		}
 
+        .videos {
+            grid-template-columns: minmax(0, 760px);
+        }
+
+        .corporate {
+            margin-bottom: 56px;
+            padding-top: 30px;
+            border-top: 1px solid var(--line);
+        }
+
+        .corporate-copy {
+            max-width: 720px;
+        }
+
+        .corporate-copy p,
+        .corporate-copy li {
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        .corporate-copy ul {
+            padding-left: 1.2rem;
+        }
+
+        .more {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid var(--line);
+        }
+
+        .more summary {
+            width: fit-content;
+            color: var(--accent);
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .more summary:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+        }
+
+        .more-content {
+            padding-top: 16px;
+        }
+
 		@media (max-width: 700px) {
 			main {
 				width: min(100% - 28px, 560px);
@@ -205,60 +248,108 @@
 	</style>
 </head>
 <body>
-	<main>
-		<header>
-			<p class="eyebrow">Aerospace portfolio Cedric Mekeirle</p>
-			<h1>Antares first launch</h1>
-		</header>
+    <main>
+        <header>
+            <p class="eyebrow">Portfolio - Cedric Mekeirle</p>
+            <h1>Embedded Software Engineer</h1>
+            <p class="intro">
+                Specializing in FreeRTOS flight computers, safety-critical C/C++, and low-latency Linux/Android video streaming. 
+                I focus on hands-on hardware integration, real-time sensor fusion, and reliable fault recovery.
+            </p>
+        </header>
 
-		<section class="videos" aria-label="Launch videos">
-			<figure>
-				<video controls preload="metadata">
-					<source src="scorpion_mini_launch.mp4" type="video/mp4">
-					Your browser does not support the video element.
-				</video>
-				<figcaption>Antares - Scorpion Mini launch</figcaption>
-			</figure>
+        <!-- Rocket Avionics & Flight Operations -->
+        <section aria-labelledby="antares-title">
+            <h2 id="antares-title">Antares First Launch - September 2026</h2>
 
-		</section>
-
-		<section class="details" aria-label="Project details">
-			<div>
-				<h2>Where I contributed</h2>
-			</div>
-			<div>
-				<p>I wrote the flight computer software, including telemetry, onboard logging, and parachute pyro activation logic.</p>
-
-				<p>During the flight, I was the mission control operator. I monitored the flight computer's health and reported flight readiness, as well as pre- and post-flight statistics.</p>
-
-				<p>I am capable of working under pressure. During the first launch window, our telemetry suddenly stopped while we were on standby, so I immediately called an abort. I quickly analyzed the logs from before the loss of signal, noticed no anomalies, and decided that the connectors between the PCBs must have lost contact. Indeed, the pad team reconnected them and fixed the wiring, and during the second launch window, we flew successfully.</p>
-
-                <section class="parachute" aria-label="Parachute design">
-					<h3>Parachute design</h3>
-					<figure>
-						<img src="parachute.png" alt="The parachute designed and sewn for the Antares launch">
-						<figcaption>I designed and sewed this parachute.</figcaption>
-					</figure>
-				</section>
-
-				<h2>Iteration after the flight</h2>
-				<p>In the video, the parachute deploy event happens somewhat early; it should have occurred at apogee. I used the recorded data to investigate the behavior and found that the bug is probably related to the rotation sensor not being normalized correctly.</p>
-				<p>The interesting part was that the code always worked in our simulations. That pointed to a difference between the simulated environment and reality: the real sensor data may not have the same normalization guarantees as the simulated data. The next test is a drone flight this weekend, where I can reproduce the sensor motion and validate the hypothesis.</p>
+            <div class="videos" aria-label="Launch video">
+                <figure>
+                    <video controls preload="metadata">
+                        <source src="scorpion_mini_launch.mp4" type="video/mp4">
+                        Your browser does not support the video element.
+                    </video>
+                    <figcaption>Antares — Scorpion Mini launch</figcaption>
+                </figure>
             </div>
-		</section>
 
-		<section class="personal-projects" aria-labelledby="personal-projects-title">
-			<h2 id="personal-projects-title">Personal projects</h2>
-			<div class="project-content">
-				<h3>Learning the basics</h3>
-				<video controls preload="metadata">
-					<source src="Dmotorpizzapowerv3.1-16s.mp4" type="video/mp4">
-					Your browser does not support the video element.
-				</video>
-				<p>I explored basic aerodynamics, recovery theory and motor design and started building my own full stack hobby rockets.</p>
-				<p>Soon I will attempt my first L1 launch, hopefully by the end of 2026.</p>
-			</div>
-		</section>
-	</main>
+            <section class="details" aria-label="Antares project details">
+                <div>
+                    <h2>Flight Software & Pad Operations</h2>
+                </div>
+                <div>
+                    <p>
+                        I wrote the flight computer software, covering telemetry transmission, flash/SD logging, and automatic parachute deployment logic. On launch day, I operated mission control, running health checks and making the flight readiness calls.
+                    </p>
+                    <p>
+                        When telemetry cut out during the first launch window, I called an abort. Looking through the raw logs, I traced the issue to a bad PCB connector on the launch rail. The pad team re-seated the wiring, and we flew cleanly in the next window.
+                    </p>
+
+                    <figure class="parachute">
+                        <h3>Recovery System</h3>
+                        <img src="parachute.png" alt="The parachute designed and sewn for the Antares launch">
+                        <figcaption>I also designed and hand-sewed this recovery parachute.</figcaption>
+                    </figure>
+
+                    <!-- Elevated to primary view: Debugging & Sensor Fusion -->
+                    <div class="case-study">
+                        <h3>Post-Flight Debugging & Filter Tuning</h3>
+                        <p>
+                            When the parachute deployed early instead of at apogee, flight logs showed the variance on the estimated altitude being bigger than expected.
+                        </p>
+                        <p>
+                            Since we didn't have another full rocket body ready, we mounted the avionics bay onto a drone to recreate flight dynamics. Over three test flights, I made sure that acceleration and barometer updates are in sync, explicitly normalized the quaternions, and tuned the Extended Kalman Filter to handle rapid barometer pressure spikes.
+                        </p>
+                        <figure class="parachute">
+                            <img src="sdcard_backup_kalman_state.png" alt="Kalman fusion of barometer and accelerometer data">
+                            <figcaption>Kalman fusion of barometer and accelerometer flight data.</figcaption>
+                        </figure>
+                    </div>
+
+                    <!-- Clean timeline of EUROC preparation without corporate buzzwords -->
+                    <div class="case-study">
+                        <h3>Pre-Launch Crunch & Board Redesign (EUROC)</h3>
+                        <p>
+                            Two months before EUROC, RF compliance issues forced us to switch to a new V2 flight computer. With new PCBs being partially implemented only about 4 weeks before launch, I focused on shipping the absolute essentials: recovery logic, SD logging, and basic telemetry.
+                        </p>
+                        <p>
+                            We had all core features hardware-tested two weeks ahead of launch. At the same time, three new developers joined the team, so I spent time onboarding them, breaking down tasks, and keeping the software pipeline moving under tight deadlines.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </section>
+		
+		<!-- Hands-On Hardware & Rocketry -->
+        <section class="personal-projects" aria-labelledby="personal-projects-title">
+            <h2 id="personal-projects-title">Hands-On Rocketry & Hardware Projects</h2>
+            <div class="project-content">
+                <video controls preload="metadata">
+                    <source src="Dmotorpizzapowerv3.1-16s.mp4" type="video/mp4">
+                    Your browser does not support the video element.
+                </video>
+                <p>
+                    I build and fly my own rockets to test aerodynamics, motor thrust curves, and recovery deployment hands-on. Currently preparing for my Tripoli/NAR Level 1 high-power certification flight by late 2026.
+                </p>
+            </div>
+        </section>
+		
+		<!-- Professional Experience -->
+        <section class="corporate" aria-labelledby="corporate-title">
+            <div class="corporate-copy">
+                <h2 id="corporate-title">Professional Experience - Barco</h2>
+                <p>
+                    Joined Barco in July 2026 as an embedded software engineer in the Meeting Experience group, working directly on low-latency video streaming in C++ across Linux and Android.
+                </p>
+                <ul>
+                    <li>Tracked down and fixed a low-level video corruption issue tied to hardware acceleration on specific Intel GPU drivers.</li>
+                    <li>Added support for new USB camera formats, extending hardware compatibility for customer setups.</li>
+                    <li>Took ownership of a video streaming component within three months, handling code reviews and pull request approvals.</li>
+                </ul>
+            </div>
+        </section>
+		<footer class="portfolio-footer">
+            <p>Last updated: 5/10/2026</p>
+        </footer>
+    </main>
 </body>
 </html>
