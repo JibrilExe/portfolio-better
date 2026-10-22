@@ -96,6 +96,14 @@
 			border: 1px solid var(--line);
 		}
 
+		.parachute.wide {
+			max-width: 620px;
+		}
+
+		.parachute.wide img {
+			max-height: none;
+		}
+
 		.parachute h3 {
 			margin: 0 0 14px;
 			font-family: Arial, sans-serif;
@@ -315,6 +323,30 @@
                             We had all core features hardware-tested two weeks ahead of launch. At the same time, three new developers joined the team, so I spent time onboarding them, breaking down tasks, and keeping the software pipeline moving under tight deadlines.
                         </p>
                     </div>
+
+                    <!-- EUROC 2026: second mission control experience -->
+                    <div class="case-study">
+                        <h3>Mission Control at EUROC 2026</h3>
+                        <p>
+                            EUROC gave me my second mission control experience, this time on a military range in Portugal. That meant professional radio communication, strict safety rules on who could be where and when, and setting up mission control quickly.
+                        </p>
+                        <p>
+                            Before launch, we did final range tests of our LoRa link on a similar terrain. I also helped one of our electronics engineer with last-minute debugging of the payload PCB, adding debug LEDs to show when sensor readouts or UART communication failed.
+                        </p>
+                        <p>
+                            In mission control the link was weak, most likely due to interference, as another team had similar issues. After repositioning the receiver, we got a link showing nominal on-pad data from the V2 flight computer. During the launch itself, however, we had no link at all and the rocket went ballistic.
+                        </p>
+                        <p>
+                            Right after the launch window, we were already analysing the failure. One indicator points to the electronics dying under the 25 g load because of a weak connector, but we can't be certain. My next step is finding a new rocket and launch opportunity to test my software outside of simulations.
+                        </p>
+                        <figure class="parachute wide">
+                            <img src="mc_euroc2026.webp" alt="Antares mission control tent at EUROC 2026 in Portugal">
+                            <figcaption>Antares mission control at EUROC 2026.</figcaption>
+                        </figure>
+                        <p>
+                            Above all, it was an amazing experience to learn from and connect with engineers. At the afterparty Antares hosted, I got to dance with people from all over Europe.
+                        </p>
+                    </div>
                 </div>
             </section>
         </section>
@@ -348,7 +380,7 @@
             </div>
         </section>
 		<footer class="portfolio-footer">
-            <p>Last updated: 5/10/2026</p>
+            <p>Last updated: 22/10/2026</p>
         </footer>
     </main>
 </body>
