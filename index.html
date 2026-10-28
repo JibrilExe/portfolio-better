@@ -3,7 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Antares first launch</title>
+	<title>Cedric Mekeirle - Embedded & Flight Software</title>
+	<meta name="description" content="Cedric Mekeirle, embedded software engineer. Rocket flight computers, sensor fusion, mission control at EuRoC 2026.">
+	<meta property="og:title" content="Cedric Mekeirle - Embedded & Flight Software">
+	<meta property="og:image" content="https://jibrilexe.github.io/portfolio-better/scorpion_mini_launch_poster.jpg">
 	<style>
 		:root {
 			color-scheme: light;
@@ -229,6 +232,29 @@
             padding-top: 16px;
         }
 
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 22px;
+            margin: 22px 0 0;
+            padding: 0;
+            list-style: none;
+            font-family: Arial, sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .contact a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+
+        .contact a:hover,
+        .contact a:focus-visible {
+            border-bottom-color: var(--accent);
+        }
+
 		@media (max-width: 700px) {
 			main {
 				width: min(100% - 28px, 560px);
@@ -264,6 +290,11 @@
                 Specializing in FreeRTOS flight computers, safety-critical C/C++, and low-latency Linux/Android video streaming. 
                 I focus on hands-on hardware integration, real-time sensor fusion, and reliable fault recovery.
             </p>
+            <ul class="contact">
+                <li><a href="mailto:cedric.mekeirle@outlook.com">cedric.mekeirle@outlook.com</a></li>
+                <li><a href="https://www.linkedin.com/in/cedric-mekeirle-058337252" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="https://github.com/JibrilExe" target="_blank" rel="noopener">GitHub</a></li>
+            </ul>
         </header>
 
         <!-- Rocket Avionics & Flight Operations -->
@@ -272,7 +303,7 @@
 
             <div class="videos" aria-label="Launch video">
                 <figure>
-                    <video controls preload="metadata">
+                    <video controls preload="metadata" poster="scorpion_mini_launch_poster.jpg">
                         <source src="scorpion_mini_launch.mp4" type="video/mp4">
                         Your browser does not support the video element.
                     </video>
@@ -331,20 +362,20 @@
                             EUROC gave me my second mission control experience, this time on a military range in Portugal. That meant professional radio communication, strict safety rules on who could be where and when, and setting up mission control quickly.
                         </p>
                         <p>
-                            Before launch, we did final range tests of our LoRa link on a similar terrain. I also helped one of our electronics engineer with last-minute debugging of the payload PCB, adding debug LEDs to show when sensor readouts or UART communication failed.
+                            Before launch, we did final range tests of our LoRa link on a similar terrain. I also helped one of our electronics engineers with last-minute debugging of the payload PCB, adding debug LEDs to show when sensor readouts or UART communication failed.
                         </p>
                         <p>
                             In mission control the link was weak, most likely due to interference, as another team had similar issues. After repositioning the receiver, we got a link showing nominal on-pad data from the V2 flight computer. During the launch itself, however, we had no link at all and the rocket went ballistic.
                         </p>
                         <p>
-                            Right after the launch window, we were already analysing the failure. One indicator points to the electronics dying under the 25 g load because of a weak connector, but we can't be certain. My next step is finding a new rocket and launch opportunity to test my software outside of simulations.
+                            Right after the launch window, we were already analysing the failure. One indicator points to the electronics dying under the 25 g load because of a weak connector, but we can't be certain. What I'm taking from it: qualify connectors under flight loads, not just on the bench, and never rely on the radio link to know what happened in flight. My next step is finding a new rocket and launch opportunity to test my software outside of simulations.
                         </p>
                         <figure class="parachute wide">
                             <img src="mc_euroc2026.webp" alt="Antares mission control tent at EUROC 2026 in Portugal">
                             <figcaption>Antares mission control at EUROC 2026.</figcaption>
                         </figure>
                         <p>
-                            Above all, it was an amazing experience to learn from and connect with engineers. At the afterparty Antares hosted, I got to dance with people from all over Europe.
+                            Above all, it was an amazing experience to learn from and connect with engineers from teams all over Europe.
                         </p>
                     </div>
                 </div>
@@ -355,7 +386,7 @@
         <section class="personal-projects" aria-labelledby="personal-projects-title">
             <h2 id="personal-projects-title">Hands-On Rocketry & Hardware Projects</h2>
             <div class="project-content">
-                <video controls preload="metadata">
+                <video controls preload="metadata" poster="dmotor_poster.jpg">
                     <source src="Dmotorpizzapowerv3.1-16s.mp4" type="video/mp4">
                     Your browser does not support the video element.
                 </video>
@@ -380,7 +411,7 @@
             </div>
         </section>
 		<footer class="portfolio-footer">
-            <p>Last updated: 22/10/2026</p>
+            <p>Last updated: 28/10/2026</p>
         </footer>
     </main>
 </body>
